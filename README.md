@@ -1,28 +1,22 @@
-# Customer Segmentation with K-Means
-# Author: Moses BALUME
+# Customer Segmentation using K-Means
 
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
+## Overview
+This project applies K-Means clustering to segment customers based on income and spending behavior.
 
-# Load dataset
-data = pd.read_csv("customers.csv")
-print(data.head())
+## Objective
+Identify distinct customer groups to support targeted marketing strategies.
 
-# Select features
-X = data[['Income', 'SpendingScore']]
+## Tools
+- Python
+- Pandas
+- Matplotlib
+- Scikit-learn
 
-# Apply K-Means
-kmeans = KMeans(n_clusters=3, random_state=42)
-data['Cluster'] = kmeans.fit_predict(X)
+## Method
+- Load dataset
+- Select key features
+- Apply K-Means clustering
+- Visualize clusters
 
-print("\nCluster distribution:")
-print(data['Cluster'].value_counts())
-
-# Visualization
-plt.figure(figsize=(8,5))
-plt.scatter(data['Income'], data['SpendingScore'], c=data['Cluster'])
-plt.xlabel("Income")
-plt.ylabel("Spending Score")
-plt.title("Customer Segmentation using K-Means")
-plt.show()
+## Business Value
+Helps companies understand different customer profiles and improve marketing decisions.
